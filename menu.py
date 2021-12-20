@@ -116,7 +116,7 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Генерация карты местности и\n"
 "нахождение кратчайшего пути"))
         self.label.setText(_translate("MainWindow", "Количество столбцов карты"))
-        self.label_2.setText(_translate("MainWindow", "уоличество строк карты"))
+        self.label_2.setText(_translate("MainWindow", "Количество строк карты"))
         self.startButton.setText(_translate("MainWindow", "Начать генерацию карты"))
 
     def start_functions(self):

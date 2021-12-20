@@ -15,8 +15,8 @@ def build_graph(grid):
             graph[(x, y)] = graph.get((x, y), []) + get_neighbours(x, y, grid)
     return graph
 
-# Эвристическая функция для черырех направлений (манхеттенское расстояние)
-def heuristic_manchen(a, b):
+# Эвристическая функция для четырех направлений (манхэттенское расстояние)
+def heuristic_manhattan(a, b):
    return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
 # # Эвристическая функция для четырех направлений и диагоналей (расстояние Чебышева)
@@ -41,7 +41,7 @@ def dijkstra(start, goal, graph):
             new_cost = cost_visited[cur_node] + neigh_cost
 
             if neigh_node not in cost_visited or new_cost < cost_visited[neigh_node]:
-                priority = new_cost + heuristic_manchen(neigh_node, goal)
+                priority = new_cost + heuristic_manhattan(neigh_node, goal)
                 hp.heappush(queue, (priority, neigh_node))
                 cost_visited[neigh_node] = new_cost
                 visited[neigh_node] = cur_node

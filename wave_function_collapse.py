@@ -47,7 +47,7 @@ def parse_patterns(input_size, pixels, weights, patterns, N):
         for x in range(input_size[1]-(N-1)): # column        
             pattern = []
             for k in pixels[y:y+N]:
-                pattern.append([int(i) for i in k[x:x+N]]) # change array to int really quick
+                pattern.append([int(i) for i in k[x:x+N]]) 
             for rotation in get_all_rotations(pattern):
                 if rotation not in weights:
                     weights[rotation] = 1
